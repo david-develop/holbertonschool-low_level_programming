@@ -15,7 +15,7 @@ int main(void)
 		{
 			for (z = x; z <= '9'; z++)
 			{
-				if (z == y)
+				if (z == x)
 				{
 					b = y + 1;
 				}
