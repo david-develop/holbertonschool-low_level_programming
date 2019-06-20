@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include<stdlib.h>
 /**
  * main - Entry point
  *
@@ -15,9 +16,13 @@ int main(void)
 			for (z = x; z <= '9'; z++)
 			{
 				if (z == y)
+				{
 					b = y + 1;
+				}
 				else
+				{
 					b = '0';
+				}
 				for (a = b; a <= '9'; a++)
 				{
 					putchar(x);
