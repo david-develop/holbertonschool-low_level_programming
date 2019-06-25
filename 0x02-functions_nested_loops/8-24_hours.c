@@ -1,6 +1,6 @@
 #include "holberton.h"
 /**
- * print_last_digit - return the last digit of a number
+ * jack_bauer - prints the 24 hour clock.
  *
  *
  */
@@ -17,12 +17,19 @@ void jack_bauer(void)
 			{
 				for (w = '0'; w <= '9'; w++)
 				{
-					_putchar(x);
-					_putchar(y);
-					_putchar(':');
-					_putchar(z);
-					_putchar(w);
-					_putchar('\n');
+					if (!(x == '2' && y > '3'))
+					{
+						_putchar(x);
+						_putchar(y);
+						_putchar(':');
+						_putchar(z);
+						_putchar(w);
+						_putchar('\n');
+					}
+					else
+					{
+						break;
+					}
 				}
 			}
 		}
