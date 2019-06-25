@@ -2,7 +2,7 @@
 /**
  * print_sign - Verify sign of variable.
  * @n: variable for input value.
- * Returns: 1 when positive, 0 when 0, and -1 when negative.
+ * Return: 1 when positive, 0 when 0, and -1 when negative.
  */
 
 int print_sign(int n)
