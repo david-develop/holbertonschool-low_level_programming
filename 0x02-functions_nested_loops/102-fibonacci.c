@@ -9,7 +9,7 @@
 int main(void)
 {
 	long int in, ln, iter;
-        long int next;
+	long int next;
 
 	in = 1;
 	ln = 2;
