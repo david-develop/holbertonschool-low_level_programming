@@ -2,7 +2,7 @@
 /**
  * _islower - Verify if the letter is lowercase.
  *
- *Returns 1 when lowercase and 0 otherwise
+ * Returns: 1 when lowercase and 0 otherwise
  */
 
 int _islower(int c)
