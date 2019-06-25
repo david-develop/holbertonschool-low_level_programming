@@ -1,7 +1,8 @@
 #include "holberton.h"
 /**
  * _isalpha - Verify if variable is a letter lowercase or uppercase.
- *
+ * @c: variable for value input.
+ * Return: when is a letter return 1.
  */
 
 int _isalpha(int c)

@@ -1,8 +1,8 @@
 #include "holberton.h"
 /**
- * _abs - return the absolute value of a variable
- *
- *
+ * _abs - return the absolute value of a variable.
+ * @n: variable for input value.
+ * Return: absolute value.
  */
 
 int _abs(int n)

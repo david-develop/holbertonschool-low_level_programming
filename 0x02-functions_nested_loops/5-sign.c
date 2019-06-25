@@ -1,8 +1,8 @@
 #include "holberton.h"
 /**
  * print_sign - Verify sign of variable.
- *
- * Returns: 1 when lowercase and 0 otherwise.
+ * @n: variable for input value.
+ * Returns: 1 when positive, 0 when 0, and -1 when negative.
  */
 
 int print_sign(int n)

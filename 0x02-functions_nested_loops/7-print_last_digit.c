@@ -1,8 +1,8 @@
 #include "holberton.h"
 /**
  * print_last_digit - return the last digit of a number
- *
- *
+ * @n: variable for input value and recursive when last digit.
+ * Return: the las digit.
  */
 
 int print_last_digit(int n)
