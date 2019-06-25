@@ -1,8 +1,8 @@
 #include "holberton.h"
 /**
- * _isalpha - Verify if variable is a letter lowercase or uppercase.
+ * print_sign - Verify sign of variable.
  *
- *Returns 1 when lowercase and 0 otherwise
+ * Returns: 1 when lowercase and 0 otherwise.
  */
 
 int print_sign(int n)
