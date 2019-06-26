@@ -42,11 +42,9 @@ int main(void)
 		nextl = inl + lnl + carry;
 		printf("%ld%ld", nextl, nexti);
 		if (!(iter == itnuml))
-		{ printf("%s", ", ");
-		}
+			printf("%s", ", ");
 		else
-		{ printf("%s", "\n");
-		}
+			printf("%s", "\n");
 	}
 	return (0);
 }
