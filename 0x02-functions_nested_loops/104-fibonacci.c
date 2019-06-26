@@ -9,11 +9,11 @@
 int main(void)
 {
 	long int in, ln, iter, itnum, next, ini, lni, inl, lnl, nexti, nextl;
-	long int itnuml = 6, tendig = 1000000000;
+	long int itnuml = 8, tendig = 1000000000, carry;
 
 	in = 1;
 	ln = 2;
-	itnum = 88;
+	itnum = 86;
 	printf("%ld, ", in);
 	printf("%ld, ", ln);
 
@@ -37,8 +37,9 @@ int main(void)
 			lni = nexti;
 			lnl = nextl;
 		}
+		carry = (ini + lni) / tendig;
 		nexti = (ini + lni) % tendig;
-		nextl = inl + lnl + (nexti / tendig);
+		nextl = inl + lnl + carry;
 		printf("%ld%ld", nextl, nexti);
 		if (!(iter == itnuml))
 		{ printf("%s", ", ");
