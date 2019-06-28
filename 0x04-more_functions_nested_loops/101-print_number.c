@@ -6,7 +6,8 @@
  */
 void print_number(int n)
 {
-	int abs = n, num, dig = 0, tend = 1, iter = 1, numch;
+	int dig = 0, tend = 1, iter = 1;
+	unsigned int abs = n, numch, num;
 
 	if (n < 0)
 	{
