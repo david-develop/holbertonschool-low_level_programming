@@ -29,7 +29,7 @@ void print_number(int n)
 		tend *= 10;
 		iter++;
 	}
-	while(tend >= 1)
+	while (tend >= 1)
 	{
 		numch = (abs / tend) % 10;
 		_putchar(numch + '0');
