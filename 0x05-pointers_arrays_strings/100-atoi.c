@@ -3,12 +3,11 @@
  * _atoi - function that convert to integrer.
  * @s: input string.
  *
- *
  * Return: integrer.
  */
 int _atoi(char *s)
 {
-	unsigned int res = 0, sing = 1, i;
+	int res = 0, sing = 1, i;
 
 	for (i = 0; s[i] != '\0'; i++)
 	{
@@ -32,5 +31,5 @@ int _atoi(char *s)
 			break;
 		}
 	}
-	return (res * sing);
+	return (sing * res);
 }
