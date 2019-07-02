@@ -13,9 +13,9 @@ void puts_half(char *str)
 	{
 		leng++;
 	}
-	h = leng / 2;
 	if (leng % 2 == 0)
 	{
+		h = leng / 2;
 		while (*(str + h) != '\0')
 		{
 			_putchar(str[h]);
@@ -24,7 +24,7 @@ void puts_half(char *str)
 	}
 	else
 	{
-		h--;
+		h = (leng + 1) / 2;
 		while (*(str + h) != '\0')
 		{
 			_putchar(str[h]);
