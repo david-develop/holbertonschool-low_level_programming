@@ -6,17 +6,18 @@
  */
 void puts_half(char *str)
 {
-	int i = 0, h;
+	int leng = 0, h;
 
 	/*count the lenght of the string*/
-	while (*(str + i) != '\0')
+	while (*(str + leng) != '\0')
 	{
-		h = i / 2;
-		if (i < h)
-		{
-			_putchar(str[i]);
-		}
-		i++;
+		leng++;
+	}
+	h = leng / 2;
+	while (*(str + h) != '\0')
+	{
+		_putchar(str[h]);
+		h++;
 	}
 	_putchar('\n');
 }
