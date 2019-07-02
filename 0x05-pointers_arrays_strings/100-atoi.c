@@ -1,4 +1,5 @@
 #include "holberton.h"
+#include <stdio.h>
 /**
  * _atoi - function that convert to integrer.
  * @s: input string.
@@ -7,7 +8,7 @@
  */
 int _atoi(char *s)
 {
-	int res = 0, sing = 1, i;
+	unsigned int res = 0, sing = 1, i;
 
 	for (i = 0; s[i] != '\0'; i++)
 	{
