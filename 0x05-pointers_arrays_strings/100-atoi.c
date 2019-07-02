@@ -1,5 +1,4 @@
 #include "holberton.h"
-#include <stdio.h>
 /**
  * _atoi - function that convert to integrer.
  * @s: input string.
