@@ -1,0 +1,1 @@
+This is a project for study purposes regardles to pointers and arrays, the project must be completed in one day and have different kind of functions using pointers and arrays.
