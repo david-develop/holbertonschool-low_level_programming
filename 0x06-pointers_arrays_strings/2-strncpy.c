@@ -31,7 +31,7 @@ char *_strncpy(char *dest, char *src, int n)
 			dest[i] = src[iter_n];
 			i++;
 		}
-		for (; iter_n < 98; iter_n++)
+		for (; iter_n < 98 - 1; iter_n++)
 		{
 			dest[i] = '\0';
 			i++;
