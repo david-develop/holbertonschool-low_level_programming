@@ -1,7 +1,7 @@
 #include "holberton.h"
 
 /**
- * _strcat - concatenate two strings
+ * _strncat - concatenate two strings
  * @dest: the string where we want to append.
  * @src: the string from which n characters are going to append.
  * @n: maximum number of character to be appended.
