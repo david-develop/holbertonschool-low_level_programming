@@ -9,33 +9,15 @@
  */
 char *_strncpy(char *dest, char *src, int n)
 {
-	int i = 0, leng = 0, iter_n = 0;
-	/*count the length of the given string*/
-	while (src[leng] != '\0')
+	int iter_n = 0;
+
+	for (iter_n = 0; iter_n < n && src[iter_n] != '\0'; iter_n++)
 	{
-		leng++;
+		dest[iter_n] = src[iter_n];
 	}
-	/*add second string to the first until n and only to the '\0'*/
-	if (n < leng)
+	for (; iter_n < n; iter_n++)
 	{
-		for (iter_n = 0; iter_n < n && src[iter_n] != '\0'; iter_n++)
-		{
-			dest[i] = src[iter_n];
-			i++;
-		}
-	}
-	else
-	{
-		for (; iter_n < n && src[iter_n] != '\0'; iter_n++)
-		{
-			dest[i] = src[iter_n];
-			i++;
-		}
-		for (; iter_n < 98 - 1; iter_n++)
-		{
-			dest[i] = '\0';
-			i++;
-		}
+		dest[iter_n] = '\0';
 	}
 	/* add '\0' at the end */
 	return (&(*dest));
