@@ -8,12 +8,12 @@
  */
 char *_strstr(char *haystack, char *needle)
 {
-	const char *p_i;
-	const char *p_ss = needle;
+	char *p_i;
+	char *p_ss = needle;
 
-	for (; *haystack != '\0'; ++haystack)
+	for (; *haystack != '\0'; haystack++)
 	{
-		for (p_i = haystack; *p_ss == *p_i && *p_ss; ++p_ss, ++p_i)
+		for (p_i = haystack, p_ss = needle; *p_ss == *p_i && *p_ss; p_ss++, p_i++)
 			;
 		if (*p_ss == '\0')
 			return (haystack);
