@@ -1,0 +1,1 @@
+this is a project for functions of C libraries, using pointers and arrays.
