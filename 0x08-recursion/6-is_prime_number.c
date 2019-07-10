@@ -1,6 +1,6 @@
 #include "holberton.h"
 /**
- * calc_sqrt - returns the factorial of a given number.
+ * calc_prime - returns the factorial of a given number.
  * @n: input value.
  * @y: number calc.
  * Return: 0 or 1.
