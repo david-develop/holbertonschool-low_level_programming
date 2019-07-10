@@ -1,8 +1,9 @@
 #include "holberton.h"
 /**
- * factorial - returns the factorial of a given number.
- * @n: input value.
- * Return: factorial of the value and -1 if n is negative number.
+ * _pow_recursion - returns the factorial of a given number.
+ * @x: input value.
+ * @y: power number.
+ * Return: eturns the value of x raised to the power of y.
  */
 int _pow_recursion(int x, int y)
 {
