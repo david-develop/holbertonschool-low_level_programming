@@ -9,7 +9,8 @@
 
 int main(int argc, char *argv[])
 {
-	int money, coins, count = 0;
+	int money, cas, count = 0;
+	int coins [] = {25, 10, 5, 2, 1};
 
 	if (argc < 2)
 	{
@@ -21,16 +22,11 @@ int main(int argc, char *argv[])
 		printf("0\n");
 	else
 	{
-		for (coins = 25; money >= coins; count++)
-			money -= coins;
-		for (coins = 10; money >= coins; count++)
-			money -= coins;
-		for (coins = 5; money >= coins; count++)
-			money -= coins;
-		for (coins = 2; money >= coins; count++)
-			money -= coins;
-		for (coins = 1; money >= coins; count++)
-			money -= coins;
+		for (cas = 0; cas < 5; cas++)
+		{
+			for (; money >= coins[cas]; count++)
+			money -= coins[cas];
+		}
 		if (money == 0)
 			printf("%d\n", count);
 	}
