@@ -1,0 +1,1 @@
+This repository contain the projects concerning to the use of argc and argv in C programs. 
