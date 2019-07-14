@@ -11,7 +11,7 @@ int _isdigit(int c);
 int main(int argc, char *argv[])
 {
 	int i, array_i;
-	int sum;
+	int sum = 0;
 
 	if (argc <= 1)
 	{
@@ -21,6 +21,7 @@ int main(int argc, char *argv[])
 	{
 		for (i = 1; i < argc; i++)
 		{
+			sum += atoi(argv[i]);
 			for (array_i = 0; argv[i][array_i] != '\0'; array_i++)
 			{
 				if (!_isdigit(argv[i][array_i]))
@@ -29,7 +30,6 @@ int main(int argc, char *argv[])
 					return (1);
 				}
 			}
-			sum += atoi(argv[i]);
 		}
 		printf("%d\n", sum);
 	}
