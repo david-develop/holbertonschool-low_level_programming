@@ -10,7 +10,7 @@ int _isdigit(int c);
 
 int main(int argc, char *argv[])
 {
-	int i, array_i;
+	int i, array_i, in;
 	int sum = 0;
 
 	for (i = 1; i < argc; i++)
@@ -23,8 +23,9 @@ int main(int argc, char *argv[])
 				return (1);
 			}
 		}
-		sum += atoi(argv[i]);
 	}
+	for (in = 0; in < argc; in++)
+		sum += atoi(argv[in]);
 	printf("%d\n", sum);
 	return (0);
 }
