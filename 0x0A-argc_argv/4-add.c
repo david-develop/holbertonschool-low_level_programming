@@ -13,26 +13,19 @@ int main(int argc, char *argv[])
 	int i, array_i;
 	int sum = 0;
 
-	if (argc <= 1)
+	for (i = 1; i < argc; i++)
 	{
-		printf("0\n");
-	}
-	else
-	{
-		for (i = 1; i < argc; i++)
+		for (array_i = 0; argv[i][array_i] != '\0'; array_i++)
 		{
-			sum += atoi(argv[i]);
-			for (array_i = 0; argv[i][array_i] != '\0'; array_i++)
+			if (!_isdigit(argv[i][array_i]))
 			{
-				if (!_isdigit(argv[i][array_i]))
-				{
-					printf("Error\n");
-					return (1);
-				}
+				printf("Error\n");
+				return (1);
 			}
 		}
-		printf("%d\n", sum);
+		sum += atoi(argv[i]);
 	}
+	printf("%d\n", sum);
 	return (0);
 }
 /**
