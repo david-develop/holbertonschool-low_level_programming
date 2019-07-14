@@ -10,22 +10,25 @@
 
 int main(int argc, char *argv[])
 {
-	int i, array_i, in;
+	int i, array_i;
 	int sum = 0;
 
-	for (i = 1; i < argc; i++)
+	(void)argv;
+	if (argc > 1)
 	{
-		for (array_i = 0; argv[i][array_i] != '\0'; array_i++)
+		for (i = 1; i < argc; i++)
 		{
-			if (!isdigit(argv[i][array_i]))
+			for (array_i = 0; argv[i][array_i] != '\0'; array_i++)
 			{
-				printf("Error\n");
-				return (1);
+				if (!isdigit(argv[i][array_i]))
+				{
+					printf("Error\n");
+					return (1);
+				}
 			}
+			sum += atoi(argv[i]);
 		}
 	}
-	for (in = 1; in < argc; in++)
-		sum += atoi(argv[in]);
 	printf("%d\n", sum);
 	return (0);
 }
