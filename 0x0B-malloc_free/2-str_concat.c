@@ -26,7 +26,7 @@ char *str_concat(char *s1, char *s2)
 	{
 		cat_ar[cp] = s1[cp];
 	}
-	for (r = 0; r <= j; cp++, r++)
+	for (r = 0; r < j; cp++, r++)
 	{
 		cat_ar[cp] = s2[r];
 	}
