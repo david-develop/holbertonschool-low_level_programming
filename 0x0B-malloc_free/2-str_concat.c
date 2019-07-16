@@ -12,6 +12,11 @@ char *str_concat(char *s1, char *s2)
 	char *cat_ar;
 	unsigned int i, j, cp, r, final_leng;
 
+	if (s1 == NULL)
+		s1 = "";
+	if (s2 == NULL)
+		s1 = "";
+
 	for (i = 0; s1[i] != '\0'; i++)
 		;
 	for (j = 0; s2[j] != '\0'; j++)
@@ -31,7 +36,7 @@ char *str_concat(char *s1, char *s2)
 	{
 		cat_ar[cp] = s2[r];
 	}
-	cat_ar[cp] = s2[r];
+	cat_ar[final_leng] = s2[r];
 
 	return (cat_ar);
 }
