@@ -30,7 +30,7 @@ char *str_concat(char *s1, char *s2)
 	{
 		cat_ar[cp] = s2[r];
 	}
-	cat_ar[final_leng] = '\0';
+	cat_ar[cp] = '\0';
 
 	return (cat_ar);
 }
