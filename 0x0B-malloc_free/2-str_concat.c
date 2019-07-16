@@ -1,5 +1,6 @@
 #include "holberton.h"
 #include <stdlib.h>
+#include <stdio.h>
 /**
  * str_concat - concatenates two strings in a new allocated space.
  * @s1: given string 1.
@@ -30,7 +31,7 @@ char *str_concat(char *s1, char *s2)
 	{
 		cat_ar[cp] = s2[r];
 	}
-	cat_ar[cp] = '\0';
+	cat_ar[cp] = s2[r];
 
 	return (cat_ar);
 }
