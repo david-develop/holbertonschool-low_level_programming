@@ -26,12 +26,12 @@ char **strtow(char *str)
 	{
 		if (str[i] != ' ')
 		{
-			for (i++; str[i] != ' '; i++)
+			for (; str[i] != ' '; i++)
 				;
 			count_w++;
 		}
 	}
-	p = malloc(count_w * sizeof(char *));
+	p = malloc((count_w + 1) * sizeof(char *));
 	if (p == NULL)
 		return (NULL);
 	for (i = 0; i < leng; i++)
