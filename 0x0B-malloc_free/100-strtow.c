@@ -40,7 +40,7 @@ char **strtow(char *str)
 	for (leng = 0; str[leng] != '\0'; leng++)
 		;
 	count_w = cwords(str, leng);
-	p = malloc((count_w + 1) * sizeof(char *));
+	p = (char **)malloc((count_w + 1) * sizeof(char *));
 	if (p == NULL || count_w == 0)
 	{
 		free(p);
@@ -52,7 +52,7 @@ char **strtow(char *str)
 		{z = 1;
 			for (count_c = 0; str[i] != ' '; i++)
 				count_c++;
-			p[x] = malloc((count_c + 1) * sizeof(char));
+			p[x] = (char *)malloc((count_c + 1) * sizeof(char));
 			if (p[x] == NULL)
 			{
 				for (fr = 0; fr <= x; fr++)
