@@ -34,12 +34,14 @@ char **strtow(char *str)
 	int count_w = 0, count_c = 0, i, leng, x = 0, fr, j = 0, z = 0;
 
 	if (str == NULL || *str == '\0')
+	{
 		return (NULL);
+	}
 	for (leng = 0; str[leng] != '\0'; leng++)
 		;
 	count_w = cwords(str, leng);
 	p = malloc((count_w + 1) * sizeof(char *));
-	if (p == NULL)
+	if (p == NULL || count_w == 0)
 	{
 		free(p);
 		return (NULL);
