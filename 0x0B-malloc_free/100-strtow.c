@@ -10,7 +10,7 @@ char **strtow(char *str)
 {
 	char **p;
 	int count_w, count_c;
-	int i, leng, x, fr, j;
+	int i, leng, x, fr, j, z = 0;
 
 	count_w = 0;
 	count_c = 0;
@@ -38,6 +38,7 @@ char **strtow(char *str)
 	{
 		if (str[i] != ' ')
 		{
+			z = 1;
 			for (count_c = 0; str[i] != ' '; i++)
 				count_c++;
 			p[x] = malloc((count_c + 1) * sizeof(char));
@@ -58,6 +59,8 @@ char **strtow(char *str)
 			x++;
 		}
 	}
+	if (z != 1)
+		return (NULL);
 	p[x] = NULL;
 	return (p);
 }
