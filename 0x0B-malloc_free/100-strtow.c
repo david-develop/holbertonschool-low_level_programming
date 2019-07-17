@@ -47,12 +47,14 @@ char **strtow(char *str)
 				{
 					free(p[fr]);
 				}
+				free(p);
 				return (NULL);
 			}
 			for (j = 0; j < count_c; j++)
 			{
 				p[x][j] = str[(i - count_c) + j];
 			}
+			p[x][j] = '\0';
 			x++;
 		}
 		p[x] = NULL;
