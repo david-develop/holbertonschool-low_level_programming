@@ -43,7 +43,7 @@ char **strtow(char *str)
 			p[x] = malloc((count_c + 1) * sizeof(char));
 			if (p[x] == NULL)
 			{
-				for (fr = x; fr > 0; fr--)
+				for (fr = 0; fr <= x; fr++)
 				{
 					free(p[fr]);
 				}
