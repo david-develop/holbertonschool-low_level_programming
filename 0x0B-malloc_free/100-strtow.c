@@ -8,7 +8,7 @@
  */
 char **strtow(char *str)
 {
-	char **p = NULL;
+	char **p;
 	int count_w, count_c;
 	int i, leng, x, fr, j;
 
@@ -57,7 +57,7 @@ char **strtow(char *str)
 			p[x][j] = '\0';
 			x++;
 		}
-		p[x] = NULL;
 	}
+	p[x] = NULL;
 	return (p);
 }
