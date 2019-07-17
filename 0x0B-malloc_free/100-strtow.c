@@ -9,7 +9,7 @@
  */
 int cwords(char *str, int l)
 {
-	int i, count_w;
+	int i, count_w = 0;
 
 	for (i = 0; i < l; i++)
 	{
@@ -40,7 +40,10 @@ char **strtow(char *str)
 	count_w = cwords(str, leng);
 	p = malloc((count_w + 1) * sizeof(char *));
 	if (p == NULL)
+	{
+		free(p);
 		return (NULL);
+	}
 	for (i = 0; i < leng; i++)
 	{
 		if (str[i] != ' ')
