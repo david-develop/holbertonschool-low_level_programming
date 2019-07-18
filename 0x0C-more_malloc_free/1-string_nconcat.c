@@ -21,10 +21,10 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	for (j = 0; s2[j] != '\0'; j++)
 		;
 	if (n >= j)
-		total_l = i + j + 1;
+		total_l = i + j;
 	else if (n < j)
-		total_l = i + n + 1;
-	cated_string = malloc(sizeof(char) * (total_l));
+		total_l = i + n;
+	cated_string = malloc(sizeof(char) * (total_l + 1));
 	if (cated_string == NULL)
 		return (NULL);
 
@@ -40,6 +40,6 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		}
 	}
 	/* add '\0' at the end */
-	cated_string[total_l] = '\0';
+	cated_string[iter_n] = '\0';
 	return (cated_string);
 }
