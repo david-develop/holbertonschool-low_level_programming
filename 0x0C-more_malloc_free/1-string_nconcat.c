@@ -9,24 +9,28 @@
  */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	char *cated_string;
+	char *cated_string = NULL;
 	unsigned int i, j, iter_n, total_l, p;
 
 	i = 0;
 	iter_n = 0;
 
-	if (s2[0] == '\0')
-		n = 0;
+	if (s1 == NULL)
+		s1 = "";
+	if (s2 == NULL)
+		s2 = "";
 
-	/*count first string*/
+	/*count first and second string*/
 	for (i = 0; s1[i] != '\0'; i++)
 		;
 	for (j = 0; s2[j] != '\0'; j++)
 		;
+	/*condition if n > a lenght of s2*/
 	if (n >= j)
 		total_l = i + j;
 	else if (n < j)
 		total_l = i + n;
+
 	cated_string = malloc(sizeof(char) * (total_l + 1));
 	if (cated_string == NULL)
 		return (NULL);
