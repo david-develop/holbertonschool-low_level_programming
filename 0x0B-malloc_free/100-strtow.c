@@ -50,7 +50,7 @@ char **strtow(char *str)
 	{
 		if (str[i] != ' ')
 		{z = 1;
-			for (count_c = 0; str[i] != ' '; i++)
+			for (count_c = 0; str[i] != ' ' && str[i] != '\0'; i++)
 				count_c++;
 			p[x] = (char *)malloc((count_c + 1) * sizeof(char));
 			if (p[x] == NULL)
