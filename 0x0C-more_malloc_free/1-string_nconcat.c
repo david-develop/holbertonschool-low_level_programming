@@ -10,7 +10,7 @@
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	char *cated_string;
-	unsigned int i, iter_n, total_l, p;
+	unsigned int i, j, iter_n, total_l, p;
 
 	i = 0;
 	iter_n = 0;
@@ -18,13 +18,18 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	/*count first string*/
 	for (i = 0; s1[i] != '\0'; i++)
 		;
-	total_l = i + n + 1;
+	for (j = 0; s2[j] != '\0'; j++)
+		;
+	if (n >= j)
+		total_l = i + j;
+	else if (n < j)
+		total_l = i + n;
 	cated_string = malloc(sizeof(char) * (total_l));
 	if (cated_string == NULL)
 		return (NULL);
 
 	/*add second string to the first until n and only to the '\0'*/
-	for (iter_n = 0, p = 0; iter_n < total_l - 1; iter_n++)
+	for (iter_n = 0, p = 0; iter_n < total_l; iter_n++)
 	{
 		if (iter_n < i)
 			cated_string[iter_n] = s1[iter_n];
