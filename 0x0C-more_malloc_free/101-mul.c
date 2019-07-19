@@ -25,7 +25,7 @@ int main(int argc, char *argv[])
 		len2 = strlen(argv[2]);
 		result = malloc(sizeof(char) * (len1 + len2 + 1));
 		if (result == NULL)
-			return(1);
+			exit(98);
 		for (i = 1; i < argc; i++)
 		{
 			for (array_i = 0; argv[i][array_i] != '\0'; array_i++)
