@@ -6,6 +6,7 @@
 # Ignore main files
 **/*main.c
 !/0x03-debugging/*main.c
+!/0x0D-preprocessor/2-main.c
 
 # Ignore object files and libraries
 *.o
