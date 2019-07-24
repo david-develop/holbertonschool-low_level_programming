@@ -1,4 +1,4 @@
-#include "function_pointers.h"
+#include <stdlib.h>
 /**
  * int_index - function that searches for an integer.
  * @cmp: pointer to the function to be used to compare values.
@@ -10,6 +10,9 @@
 int int_index(int *array, int size, int (*cmp)(int))
 {
 	int i, r;
+
+	if (array == NULL || cmp == NULL)
+		exit(98);
 
 	if (size <= 0)
 		return (-1);
