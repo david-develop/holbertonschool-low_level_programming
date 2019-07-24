@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 /**
  * main - prints the opcodes of its own main function.
  * @argc: argument count.
@@ -22,5 +23,5 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		exit(2);
 	}
-	return(0);
+	return (0);
 }
