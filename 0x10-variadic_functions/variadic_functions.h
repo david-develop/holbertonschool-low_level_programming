@@ -10,7 +10,7 @@
  */
 typedef struct prfor
 {
-	char* form;
+	char *form;
 	void (*f)(va_list);
 } prfor_t;
 
