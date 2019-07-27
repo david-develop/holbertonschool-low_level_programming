@@ -87,5 +87,10 @@ void print_string(va_list va)
 	char *s;
 
 	s = va_arg(va, char *);
+	if (s == NULL)
+	{
+		printf("(nil)");
+		return;
+	}
 	printf("%s", s);
 }
