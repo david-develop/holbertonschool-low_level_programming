@@ -16,13 +16,12 @@ void print_all(const char * const format, ...)
 		{"s", print_string},
 		{NULL, NULL}
 	};
-	int i, j, cont;
+	int i, j;
 	va_list argu;
 	char *s = "";
 
 	va_start(argu, format);
 	i = 0;
-	cont = 0;
 
 	while (format[i] && format != NULL)
 	{
@@ -34,7 +33,6 @@ void print_all(const char * const format, ...)
 				printf("%s", s);
 				(form_get[j].f(argu));
 				s = ", ";
-				cont++;
 				break;
 			}
 			j++;
