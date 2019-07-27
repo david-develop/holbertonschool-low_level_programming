@@ -31,8 +31,14 @@ void print_all(const char * const format, ...)
 		{
 			if (form_get[j].form[0] == format[i])
 			{
-				if (cont != 0)
+				switch(cont)
+				{
+				case 0:
+					break;
+				default:
 					printf(", ");
+					break;
+				}
 				(form_get[j].f(argu));
 				cont++;
 				break;
