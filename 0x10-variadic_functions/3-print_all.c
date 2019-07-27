@@ -20,10 +20,8 @@ void print_all(const char * const format, ...)
 	va_list argu;
 
 	va_start(argu, format);
-
 	i = 0;
 	cont = 0;
-
 	while (format[i] && format != NULL)
 	{
 		j = 0;
@@ -31,7 +29,7 @@ void print_all(const char * const format, ...)
 		{
 			if (form_get[j].form[0] == format[i])
 			{
-				switch(cont)
+				switch (cont)
 				{
 				case 0:
 					break;
@@ -48,7 +46,6 @@ void print_all(const char * const format, ...)
 		i++;
 	}
 	printf("\n");
-
 	va_end(argu);
 }
 /**
