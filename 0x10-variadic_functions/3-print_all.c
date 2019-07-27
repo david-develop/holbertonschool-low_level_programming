@@ -45,7 +45,10 @@ void print_all(const char * const format, ...)
 
 	va_end(argu);
 }
-
+/**
+ * print_char - function that prints characters.
+ * @va: arguments.
+ */
 void print_char(va_list va)
 {
 	int c;
@@ -53,7 +56,10 @@ void print_char(va_list va)
 	c = va_arg(va, int);
 	printf("%c", c);
 }
-
+/**
+ * print_integer - function that prints integers.
+ * @va: arguments.
+ */
 void print_integer(va_list va)
 {
 	int i;
@@ -61,7 +67,10 @@ void print_integer(va_list va)
 	i = va_arg(va, int);
 	printf("%d", i);
 }
-
+/**
+ * print_float - function that prints floats.
+ * @va: arguments.
+ */
 void print_float(va_list va)
 {
 	double f;
@@ -69,7 +78,10 @@ void print_float(va_list va)
 	f = va_arg(va, double);
 	printf("%f", f);
 }
-
+/**
+ * print_string - function that prints stings.
+ * @va: arguments.
+ */
 void print_string(va_list va)
 {
 	char *s;
