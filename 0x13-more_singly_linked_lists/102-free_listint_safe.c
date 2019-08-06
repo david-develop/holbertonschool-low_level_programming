@@ -1,7 +1,7 @@
 #include "lists.h"
 
 /**
- * free_listpoint - frees a listpoin_t list.
+ * free_listpoint2 - frees a listpoin_t list.
  * @head: pointer to first node.
  */
 void free_listpoint2(listpoin_t *head)
@@ -18,7 +18,7 @@ void free_listpoint2(listpoin_t *head)
 }
 
 /**
- * add_nodepoint - adds a new node at the beginning of a listpoin_t list.
+ * add_nodepoint2 - adds a new node at the beginning of a listpoin_t list.
  * @head: pointer to first node.
  * @p: given address.
  * Return: the address of the new element, or NULL if it failed.
@@ -37,7 +37,7 @@ listpoin_t *add_nodepoint2(listpoin_t **head, void *p)
 }
 
 /**
- * print_listint_safe - frees a listint_t list.
+ * free_listint_safe - frees a listint_t list.
  * @h: pointer to first node.
  * Return: number of nodes in the list.
  */
