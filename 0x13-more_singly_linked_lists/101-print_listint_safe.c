@@ -1,6 +1,23 @@
 #include "lists.h"
 
 /**
+ * free_listpoint - frees a listpoin_t list.
+ * @head: pointer to first node.
+ */
+void free_listpoint(listpoin_t *head)
+{
+	listpoin_t *cursor;
+
+	while (head != NULL)
+	{
+		cursor = head;
+		head = head->next;
+		free(cursor);
+	}
+	free(head);
+}
+
+/**
  * add_nodepoint - adds a new node at the beginning of a listpoin_t list.
  * @head: pointer to first node.
  * @p: given address.
@@ -48,11 +65,14 @@ size_t print_listint_safe(const listint_t *head)
 			{
 				printf("[%p] %d\n", (void *)cursor, cursor->n);
 				printf("-> [%p] %d\n", (void *)temp, temp->n);
+				count++;
+				free_listpoint(head_strp);
 				return (count);
 			}
 		}
 		add_nodepoint(&head_strp, (void *)temp);
 		printf("[%p] %d\n", (void *)cursor, cursor->n);
 	}
+	free_listpoint(head_strp);
 	return (count);
 }
