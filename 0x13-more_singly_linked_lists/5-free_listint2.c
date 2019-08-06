@@ -8,8 +8,9 @@ void free_listint2(listint_t **head)
 	listint_t *temp;
 	listint_t *cursor;
 
+	if (*head == NULL)
+		return;
 	temp = *head;
-
 	while (temp != NULL)
 	{
 		cursor = temp;
