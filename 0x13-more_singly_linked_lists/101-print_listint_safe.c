@@ -1,4 +1,24 @@
 #include "lists.h"
+
+/**
+ * add_nodepoint - adds a new node at the beginning of a listpoin_t list.
+ * @head: pointer to first node.
+ * @p: given address.
+ * Return: the address of the new element, or NULL if it failed.
+ */
+listpoin_t *add_nodepoint(listpoin_t **head, void *p)
+{
+	listpoin_t *temp2;
+
+	temp2 = malloc(sizeof(listpoin_t));
+	if (temp2 == NULL)
+		exit(98);
+	temp2->p = p;
+	temp2->next = *head;
+	*head = temp2;
+	return (temp2);
+}
+
 /**
  * print_listint_safe - prints a listint_t linked list.
  * @head: pointer to first node.
@@ -6,34 +26,33 @@
  */
 size_t print_listint_safe(const listint_t *head)
 {
-	int i, count = 0;
-	const listint_t *cursor;
+	int count = 0;
+	const listint_t *cursor = NULL;
 	const listint_t *temp = NULL;
-	const listint_t **arr;
+	listpoin_t *cursor2 = NULL;
+	listpoin_t *head_strp = NULL;
 
+	if (head == NULL)
+		return (0);
 	cursor = head;
-	arr = malloc(sizeof(listint_t *));
-	arr[0] = cursor;
-	while (cursor != NULL)
+	add_nodepoint(&head_strp, (void *)cursor);
+	for (; cursor != NULL; cursor = cursor->next, count++)
 	{
 		if (cursor->next)
 			temp = cursor->next;
 		else
 			temp = NULL;
-		for (i = 0; i <= count; i++)
+		for (cursor2 = head_strp; cursor2 != NULL; cursor2 = cursor2->next)
 		{
-			if (temp == arr[i])
+			if (temp == cursor2->p)
 			{
 				printf("[%p] %d\n", (void *)cursor, cursor->n);
-				printf("->[%p] %d\n", (void *)temp, temp->n);
-				exit(98);
+				printf("-> [%p] %d\n", (void *)temp, temp->n);
+				return (count);
 			}
 		}
-		arr[count + 1] = temp;
+		add_nodepoint(&head_strp, (void *)temp);
 		printf("[%p] %d\n", (void *)cursor, cursor->n);
-		cursor = cursor->next;
-		count++;
-		}
+	}
 	return (count);
-
 }
