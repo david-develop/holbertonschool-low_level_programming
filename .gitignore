@@ -14,3 +14,7 @@
 *.ko
 *.obj
 *.elf
+
+# Ignore other files
+!/0x07-pointers_arrays_strings/crackme2
+!/0x09-static_libraries/functions/
