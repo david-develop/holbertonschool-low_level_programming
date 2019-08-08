@@ -13,7 +13,7 @@ int clear_bit(unsigned long int *n, unsigned int index)
 	unsigned long int p;
 
 	size = sizeof(unsigned long int) * 8;
-	if (index > size)
+	if (*n == 0 || index > size)
 		return (-1);
 	for (i = 0; i < size; i++)
 	{
@@ -27,8 +27,6 @@ int clear_bit(unsigned long int *n, unsigned int index)
 			}
 		}
 	}
-	if (*n == 0)
-		return (1);
 	*n = (a << index ^ *n);
 	return (1);
 }
