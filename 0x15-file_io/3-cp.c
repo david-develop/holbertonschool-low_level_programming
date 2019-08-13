@@ -4,7 +4,7 @@
  * main - program that copies the content of a file to another file.
  * @ac: arguments count.
  * @av: arguments vector.
- * Return: Always 0.
+ * Return: Always 0 if correct.
  */
 int main(int ac, char **av)
 {
@@ -26,25 +26,24 @@ int main(int ac, char **av)
 		exit(98);
 	}
 	fd2 = open(file_to, O_WRONLY | O_CREAT | O_TRUNC | O_APPEND, 0664);
-	while (buf_sz == 1024)
-	{
-		buf_sz = read(fd, buf, buf_sz);
-		letter_co = write(fd2, buf, buf_sz);
-	}
-
-	if (fd2 == -1 || letter_co == -1)
+	if (fd2 == -1)
 	{
 		dprintf(2, "Error: Can't write to %s\n", file_to);
 		exit(99);
 	}
-	if (close(fd) < 0)
+	while (buf_sz == 1024)
 	{
-		dprintf(2, "Error: Can't close fd %d\n", fd);
-		exit(100);
+		buf_sz = read(fd, buf, buf_sz);
+		letter_co = write(fd2, buf, buf_sz);
+		if (buf_sz == -1 || letter_co == -1)
+		{
+			dprintf(2, "Error: Can't write to %s\n", file_to);
+			exit(99);
+		}
 	}
-	if (close(fd2) < 0)
+	if (close(fd) < 0 || close(fd2) < 0)
 	{
-		dprintf(2, "Error: Can't close fd %d\n", fd2);
+		dprintf(2, "Error: Can't close fd %d\n", fd || fd2);
 		exit(100);
 	}
 	return (0);
