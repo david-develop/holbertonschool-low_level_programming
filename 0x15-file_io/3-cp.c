@@ -72,9 +72,9 @@ int main(int ac, char **av)
 		if (letter_co == -1)
 			printerr_99(file_to);
 	}
-	if (close(fd) < 0)
+	if (close(fd) == -1)
 		printerr_100(fd);
-	if (close(fd2) < 0)
+	if (close(fd2) == -1)
 		printerr_100(fd2);
 	return (0);
 }
