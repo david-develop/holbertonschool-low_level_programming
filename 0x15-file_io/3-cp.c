@@ -35,7 +35,12 @@ int main(int ac, char **av)
 	{
 		buf_sz = read(fd, buf, buf_sz);
 		letter_co = write(fd2, buf, buf_sz);
-		if (buf_sz == -1 || letter_co == -1)
+		if (buf_sz == -1)
+		{
+			dprintf(2, "Error: Can't read from file %s\n", file_from);
+			exit(98);
+		}
+		if (letter_co == -1)
 		{
 			dprintf(2, "Error: Can't write to %s\n", file_to);
 			exit(99);
