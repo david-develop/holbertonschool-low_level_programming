@@ -65,7 +65,7 @@ int main(int ac, char **av)
 		printerr_99(file_to);
 	while (buf_sz == 1024)
 	{
-		buf_sz = read(fd, buf, buf_sz);
+		buf_sz = read(fd, buf, 1024);
 		if (buf_sz == -1)
 			printerr_98(file_from);
 		letter_co = write(fd2, buf, buf_sz);
