@@ -19,13 +19,13 @@ void hash_table_print(const hash_table_t *ht)
 	{
 		if (ht->array[i] == NULL)
 			continue;
-		if (flag != 0)
-			printf(", ");
 		for (cursor = ht->array[i]; cursor != NULL; cursor = cursor->next)
 		{
+			if (flag != 0)
+				printf(", ");
 			printf("\'%s\': \'%s\'", cursor->key, cursor->value);
 		}
-		flag++;
+		flag = 1;
 	}
 	printf("}\n");
 }
