@@ -27,7 +27,7 @@ void swap(int *array,  int first, int last, size_t size)
  */
 int part_hoare(int *array, int first, int last, size_t size)
 {
-	int pivot = array[last];
+	int pivot = array[first];
 	int i = first - 1;
 	int j = last + 1;
 
@@ -41,7 +41,7 @@ int part_hoare(int *array, int first, int last, size_t size)
 			j--;
 		} while (array[j] > pivot);
 
-		if (i > j)
+		if (i >= j)
 			return (j);
 		if (array[i] > array[j])
 			swap(array, i, j, size);
