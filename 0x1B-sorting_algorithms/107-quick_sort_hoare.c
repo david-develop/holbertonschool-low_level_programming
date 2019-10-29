@@ -18,7 +18,7 @@ void swap(int *array,  int first, int last, size_t size)
 	print_array(array, size);
 }
 /**
- * part - fin the partition position or pivot of the array
+ * part_hoare - fin the partition position or pivot of the array
  * @array: array to sort
  * @first: lowest position
  * @last: highest position
@@ -33,24 +33,23 @@ int part_hoare(int *array, int first, int last, size_t size)
 
 	while (1)
 	{
-		do
-		{
+		do {
 			i++;
 		} while (array[i] < pivot);
 
-		do
-		{
+		do {
 			j--;
 		} while (array[j] > pivot);
 
-		if (i >= j)
-			return j;
-		swap(array, i, j, size);
+		if (i > j)
+			return (j);
+		if (array[i] > array[j])
+			swap(array, i, j, size);
 	}
 }
 
 /**
- * sorting - sorts an array of integers in ascending order
+ * sorting_hoare - sorts an array of integers in ascending order
  * @array: array to sort
  * @first: lowest position
  * @last: highest position
@@ -77,6 +76,9 @@ void sorting_hoare(int *array, int first, int last, size_t size)
 void quick_sort_hoare(int *array, size_t size)
 {
 	int last = size - 1;
+
+	if (!array || size == 1)
+		return;
 
 	sorting_hoare(array, 0, last, size);
 }
