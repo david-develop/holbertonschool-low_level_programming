@@ -21,7 +21,8 @@ void swap(int *array,  int first, int last, size_t size)
 /**
  * heap_change - find bigger in a heap level
  * @array: array of integers
- * @size: size of array
+ * @size_1: max index in binary tree
+ * @size_2: size of the array for printing
  * @i: index of head node.
  */
 void heap_change(int *array, size_t size_1, size_t i, size_t size_2)
@@ -55,10 +56,12 @@ void heap_sort(int *array, size_t size)
 {
 	int i;
 
+	if (!array || size == 1)
+		return;
 	for (i = size / 2 - 1; i >= 0; i--)
 		heap_change(array, size, i, size);
 
-	for (i = size - 1; i >= 0; i--)
+	for (i = size - 1; i > 0; i--)
 	{
 		swap(array, 0, i, size);
 		heap_change(array, i, 0, size);
