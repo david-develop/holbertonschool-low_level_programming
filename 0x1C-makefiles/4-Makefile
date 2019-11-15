@@ -4,9 +4,6 @@ OBJ = $(SRC:%.c=%.o)
 NAME = holberton
 CFLAGS = -Wall -Werror -Wextra -pedantic
 
-%.o: %(SRC)
-	$(CC) $(CFLAGS) -c -o $@ $<
-
 all: $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
 
