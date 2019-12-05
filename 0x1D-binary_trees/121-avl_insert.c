@@ -138,8 +138,10 @@ avl_t *avl_insert(avl_t **tree, int value)
 	}
 
 	node = avl_in(tree, value);
-
-	check_balance(&node, tree);
+	if (node != NULL)
+	{
+		check_balance(&node, tree);
+	}
 
 	return (node);
 }
