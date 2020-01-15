@@ -32,13 +32,13 @@ int interpolation_search(int *array, size_t size, int value)
 		else if (value < array[pos])
 			high = pos - 1;
 		else
-			return (pos);
+			return ((int)pos);
 	}
 
 	if (value == array[low])
 	{
 		printf("Value checked array[%zu] = [%d]\n", low, array[low]);
-		return (low);
+		return ((int)low);
 	}
 	if (flag == 0)
 	{

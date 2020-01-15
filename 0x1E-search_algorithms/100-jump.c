@@ -24,7 +24,7 @@ int linear_mod(int *array, size_t start, size_t end, int value)
 		if (array[i] == value)
 		{
 			printf("Value checked array[%zu] = [%d]\n", i, array[i]);
-			return (i);
+			return ((int)i);
 		}
 		printf("Value checked array[%zu] = [%d]\n", i, array[i]);
 	}
