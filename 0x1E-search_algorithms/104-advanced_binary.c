@@ -1,4 +1,5 @@
 #include "search_algos.h"
+
 /**
  * print_arr - function that print array
  * @array: a pointer to the first element of the complete array
@@ -15,13 +16,21 @@ void print_arr(int *array, size_t left, size_t right)
 	printf("%d\n", array[left]);
 }
 
+/**
+ * binary_rec - function that searches for a value in a sorted array of
+ * integers using the Binary search algorithm
+ * @array: a pointer to the first element of the array to search in
+ * @left: first element index
+ * @right: last element index
+ * @value: is the value to search for
+ * Return: return the first index where value is located, If value is not
+ * present in array or if array is NULL, your function must return -1
+ */
 int binary_rec(int *array, size_t left, size_t right, int value)
 {
 	size_t mid;
 
-	if (right == left && array[left] == value)
-		return (left);
-	if (right > left)
+	if (right >= left)
 	{
 		print_arr(array, left, right);
 		mid = left + (right - left) / 2;
@@ -30,9 +39,10 @@ int binary_rec(int *array, size_t left, size_t right, int value)
 			return (binary_rec(array, mid + 1, right, value));
 		else if (array[mid] > value)
 			return (binary_rec(array, left, mid - 1, value));
+		if (array[mid - 1] == value)
+			return (binary_rec(array, left, mid, value));
 		else
-			return (mid);
-
+			return ((int) mid);
 	}
 	return (-1);
 }
