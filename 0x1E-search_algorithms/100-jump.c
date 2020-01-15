@@ -23,10 +23,10 @@ int linear_mod(int *array, size_t start, size_t end, int value)
 	{
 		if (array[i] == value)
 		{
-			printf("Value checked array[%zu] = [%d]\n", i, array[i]);
-			return ((int)i);
+			printf("Value checked array[%d] = [%d]\n", (int) i, array[i]);
+			return ((int) i);
 		}
-		printf("Value checked array[%zu] = [%d]\n", i, array[i]);
+		printf("Value checked array[%d] = [%d]\n", (int) i, array[i]);
 	}
 	return (-1);
 }
@@ -52,28 +52,28 @@ int jump_search(int *array, size_t size, int value)
 
 		if (array[start] > value && start == 0)
 		{
-			printf("Value checked array[%zu] = [%d]\n", start, array[start]);
+			printf("Value checked array[%d] = [%d]\n", (int) start, array[start]);
 			return (-1);
 		}
 		else if (array[end] >= value)
 		{
-			printf("Value checked array[%zu] = [%d]\n", start, array[start]);
+			printf("Value checked array[%d] = [%d]\n", (int) start, array[start]);
 			break;
 		}
 		else
-			printf("Value checked array[%zu] = [%d]\n", start, array[start]);
+			printf("Value checked array[%d] = [%d]\n", (int) start, array[start]);
 	}
 
 	if (end >= size)
 	{
 		start = end - block_s;
-		printf("Value checked array[%zu] = [%d]\n", start, array[start]);
-		printf("Value found between indexes [%zu] and [%zu]\n", start,
+		printf("Value checked array[%d] = [%d]\n", (int) start, array[start]);
+		printf("Value found between indexes [%d] and [%zu]\n", (int) start,
 		       start + block_s);
 		return (linear_mod(array, start, size - 1, value));
 	}
 
-	printf("Value found between indexes [%zu] and [%zu]\n", start,
-	       start + block_s);
+	printf("Value found between indexes [%d] and [%d]\n", (int) start,
+	       (int) (start + block_s));
 	return (linear_mod(array, start, end, value));
 }
