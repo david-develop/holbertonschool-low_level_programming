@@ -44,7 +44,7 @@ listint_t *jump_list(listint_t *list, size_t size, int value)
 
 	block_s = sqrt(size);
 
-	if (list == NULL || size == 0)
+	if (list == NULL)
 		return (NULL);
 
 	for (end_n = list, start_n = list; end_n->index != block_s;
@@ -67,7 +67,7 @@ listint_t *jump_list(listint_t *list, size_t size, int value)
 	if (end >= size)
 	{
 		start_n = start_n->next;
-		printf("Value checked at index [%d] = [%d]\n", (int) size - 1, end_n->n);
+		printf("Value checked at index [%d] = [%d]\n", (int) (size - 1), end_n->n);
 		printf("Value found between indexes [%d] and [%d]\n", (int) start,
 		       (int) (size - 1));
 		return (linear_mod(start_n, start, size - 1, value));
