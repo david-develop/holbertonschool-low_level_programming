@@ -66,11 +66,11 @@ int jump_search(int *array, size_t size, int value)
 		start = end - block_s;
 		printf("Value checked array[%d] = [%d]\n", (int) start, array[start]);
 		printf("Value found between indexes [%d] and [%d]\n", (int) start,
-		       (int) (start + block_s));
+		       (int) (end));
 		return (linear_mod(array, start, size - 1, value));
 	}
 
 	printf("Value found between indexes [%d] and [%d]\n", (int) start,
-	       (int) (start + block_s));
+	       (int) (end));
 	return (linear_mod(array, start, end, value));
 }
